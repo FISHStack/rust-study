@@ -1,0 +1,57 @@
+=====================================
+lanrendeMBP:rusty_base lanren$ cargo run
+   Compiling rusty_base v0.1.0 (/Users/lanren/dev/rust/rusty_base)
+warning: unused variable: `x`
+ --> src/main.rs:2:10
+  |
+2 |     let (x,y) = (5,'6');
+  |          ^ help: consider prefixing with an underscore: `_x`
+  |
+  = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `y`
+ --> src/main.rs:2:12
+  |
+2 |     let (x,y) = (5,'6');
+  |            ^ help: consider prefixing with an underscore: `_y`
+
+    Finished dev [unoptimized + debuginfo] target(s) in 0.84s
+     Running `target/debug/rusty_base`
+Hello, world!
+==================================================================================
+lanrendeMBP:rusty_base lanren$ cargo run
+   Compiling rusty_base v0.1.0 (/Users/lanren/dev/rust/rusty_base)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.28s
+     Running `target/debug/rusty_base`
+Hello, world! x:5,y:6
+==================================================================================
+lanrendeMBP:rusty_base lanren$ cargo run
+   Compiling rusty_base v0.1.0 (/Users/lanren/dev/rust/rusty_base)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.20s
+     Running `target/debug/rusty_base`
+Hello, world! x:5,y:6
+The value given was: 66
+==================================================================================
+lanrendeMBP:rusty_base lanren$ cargo run
+   Compiling rusty_base v0.1.0 (/Users/lanren/dev/rust/rusty_base)
+error[E0308]: mismatched types
+ --> src/main.rs:5:17
+  |
+5 |     print_value(pv);
+  |                 ^^ expected i32, found i64
+help: you can convert an `i64` to `i32` and panic if the converted value wouldn't fit
+  |
+5 |     print_value(pv.try_into().unwrap());
+  |                 ^^^^^^^^^^^^^^^^^^^^^^
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0308`.
+error: could not compile `rusty_base`.
+
+To learn more, run the command again with --verbose.
+==================================================================================
+==================================================================================
+==================================================================================
+==================================================================================
+==================================================================================

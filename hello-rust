@@ -1,0 +1,246 @@
+
+lanrendeMBP:dev lanren$ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+info: downloading installer
+
+Welcome to Rust!
+
+
+===============================
+
+Current installation options:
+
+
+   default host triple: x86_64-apple-darwin
+     default toolchain: stable
+               profile: default
+  modify PATH variable: yes
+
+1) Proceed with installation (default)
+2) Customize installation
+3) Cancel installation
+>1
+
+
+
+===============================
+info: profile set to 'default'
+info: syncing channel updates for 'stable-x86_64-apple-darwin'
+373.0 KiB / 373.0 KiB (100 %) 156.5 KiB/s in  2s ETA:  0s
+info: latest update on 2019-11-07, rust version 1.39.0 (4560ea788 2019-11-04)
+info: downloading component 'cargo'
+  3.7 MiB /   3.7 MiB (100 %) 336.0 KiB/s in 10s ETA:  0s
+info: downloading component 'clippy'
+  1.3 MiB /   1.3 MiB (100 %) 330.7 KiB/s in  4s ETA:  0s
+info: downloading component 'rust-docs'
+ 11.8 MiB /  11.8 MiB (100 %) 240.0 KiB/s in  1m  1s ETA:  0s
+info: downloading component 'rust-std'
+173.7 MiB / 173.7 MiB (100 %) 291.4 KiB/s in  9m 54s ETA:  0s
+info: downloading component 'rustc'
+ 34.6 MiB /  60.2 MiB ( 57 %) 296.5 KiB/s in  2m 18s ETA:  1m 28s
+ 60.2 MiB /  60.2 MiB (100 %) 380.4 KiB/s in  3m 46s ETA:  0s
+info: downloading component 'rustfmt'
+  2.0 MiB /   2.0 MiB (100 %) 348.6 KiB/s in  7s ETA:  0s
+info: installing component 'cargo'
+info: installing component 'clippy'
+info: installing component 'rust-docs'
+ 11.8 MiB /  11.8 MiB (100 %)   3.2 MiB/s in  3s ETA:  0s
+info: installing component 'rust-std'
+173.7 MiB / 173.7 MiB (100 %)  26.5 MiB/s in  6s ETA:  0s
+info: installing component 'rustc'
+ 60.2 MiB /  60.2 MiB (100 %)  12.3 MiB/s in  5s ETA:  0s
+info: installing component 'rustfmt'
+info: default toolchain set to 'stable'
+
+  stable installed - rustc 1.39.0 (4560ea788 2019-11-04)
+
+
+Rust is installed now. Great!
+
+
+
+
+
+To get started you need Cargo's bin directory ($HOME/.cargo/bin) in your PATH
+environment variable. Next time you log in this will be done
+automatically.
+
+To configure your current shell run source $HOME/.cargo/env
+
+
+
+
+===============================
+
+source $HOME/.cargo/env
+===============================
+lanrendeMBP:dev lanren$ rustc
+Usage: rustc [OPTIONS] INPUT
+
+Options:
+    -h, --help          Display this message
+        --cfg SPEC      Configure the compilation environment
+    -L [KIND=]PATH      Add a directory to the library search path. The
+                        optional KIND can be one of dependency, crate, native,
+                        framework, or all (the default).
+    -l [KIND=]NAME      Link the generated crate(s) to the specified native
+                        library NAME. The optional KIND can be one of
+                        static, framework, or dylib (the default).
+        --crate-type [bin|lib|rlib|dylib|cdylib|staticlib|proc-macro]
+                        Comma separated list of types of crates
+                        for the compiler to emit
+        --crate-name NAME
+                        Specify the name of the crate being built
+        --edition 2015|2018
+                        Specify which edition of the compiler to use when
+                        compiling code.
+        --emit [asm|llvm-bc|llvm-ir|obj|metadata|link|dep-info|mir]
+                        Comma separated list of types of output for the
+                        compiler to emit
+        --print [crate-name|file-names|sysroot|cfg|target-list|target-cpus|target-features|relocation-models|code-models|tls-models|target-spec-json|native-static-libs]
+                        Compiler information to print on stdout
+    -g                  Equivalent to -C debuginfo=2
+    -O                  Equivalent to -C opt-level=2
+    -o FILENAME         Write output to <filename>
+        --out-dir DIR   Write output to compiler-chosen filename in <dir>
+        --explain OPT   Provide a detailed explanation of an error message
+        --test          Build a test harness
+        --target TARGET Target triple for which the code is compiled
+    -W, --warn OPT      Set lint warnings
+    -A, --allow OPT     Set lint allowed
+    -D, --deny OPT      Set lint denied
+    -F, --forbid OPT    Set lint forbidden
+        --cap-lints LEVEL
+                        Set the most restrictive lint level. More restrictive
+                        lints are capped at this level
+    -C, --codegen OPT[=VALUE]
+                        Set a codegen option
+    -V, --version       Print version info and exit
+    -v, --verbose       Use verbose output
+
+Additional help:
+    -C help             Print codegen options
+    -W help             Print 'lint' options and default settings
+    --help -v           Print the full set of options rustc accepts
+lanrendeMBP:dev lanren$ cargo
+Rust's package manager
+
+USAGE:
+    cargo [OPTIONS] [SUBCOMMAND]
+
+OPTIONS:
+    -V, --version           Print version info and exit
+        --list              List installed commands
+        --explain <CODE>    Run `rustc --explain CODE`
+    -v, --verbose           Use verbose output (-vv very verbose/build.rs output)
+    -q, --quiet             No output printed to stdout
+        --color <WHEN>      Coloring: auto, always, never
+        --frozen            Require Cargo.lock and cache are up to date
+        --locked            Require Cargo.lock is up to date
+        --offline           Run without accessing the network
+    -Z <FLAG>...            Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
+    -h, --help              Prints help information
+
+Some common cargo commands are (see all commands with --list):
+    build       Compile the current package
+    check       Analyze the current package and report errors, but don't build object files
+    clean       Remove the target directory
+    doc         Build this package's and its dependencies' documentation
+    new         Create a new cargo package
+    init        Create a new cargo package in an existing directory
+    run         Run a binary or example of the local package
+    test        Run the tests
+    bench       Run the benchmarks
+    update      Update dependencies listed in Cargo.lock
+    search      Search registry for crates
+    publish     Package and upload this package to the registry
+    install     Install a Rust binary. Default location is $HOME/.cargo/bin
+    uninstall   Uninstall a Rust binary
+
+See 'cargo help <command>' for more information on a specific command.
+===============================
+lanrendeMBP:dev lanren$ rustup
+rustup 1.20.2 (13979c968 2019-10-16)
+The Rust toolchain installer
+
+USAGE:
+    rustup [FLAGS] [OPTIONS] <SUBCOMMAND>
+
+FLAGS:
+    -v, --verbose    Enable verbose output
+    -q, --quiet      Disable progress output
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+OPTIONS:
+        --toolchain <toolchain>    Toolchain name, such as 'stable', 'nightly', or '1.8.0'. For more information see
+                                   `rustup help toolchain`
+
+SUBCOMMANDS:
+    show           Show the active and installed toolchains or profiles
+    update         Update Rust toolchains and rustup
+    check          Check for updates to Rust toolchains
+    default        Set the default toolchain
+    toolchain      Modify or query the installed toolchains
+    target         Modify a toolchain's supported targets
+    component      Modify a toolchain's installed components
+    override       Modify directory toolchain overrides
+    run            Run a command with an environment configured for a given toolchain
+    which          Display which binary will be run for a given command
+    doc            Open the documentation for the current toolchain
+    man            View the man page for a given command
+    self           Modify the rustup installation
+    set            Alter rustup settings
+    completions    Generate tab-completion scripts for your shell
+    help           Prints this message or the help of the given subcommand(s)
+
+DISCUSSION:
+    rustup installs The Rust Programming Language from the official
+    release channels, enabling you to easily switch between stable,
+    beta, and nightly compilers and keep them updated. It makes
+    cross-compiling simpler with binary builds of the standard library
+    for common platforms.
+
+    If you are new to Rust consider running `rustup doc --book` to
+    learn Rust.
+===============================
+lanrendeMBP:rust lanren$ cargo new rusty_start --bin
+     Created binary (application) `rusty_start` package
+===============================
+lanrendeMBP:rust lanren$ cd rusty_start/
+===============================
+lanrendeMBP:rusty_start lanren$ tree .
+.
+├── Cargo.toml
+└── src
+    └── main.rs
+
+1 directory, 2 files
+===============================
+lanrendeMBP:src lanren$ rustc main.rs
+lanrendeMBP:src lanren$
+lanrendeMBP:src lanren$ ls
+main	main.rs
+lanrendeMBP:src lanren$ ./main
+Hello, world!
+===============================
+lanrendeMBP:rusty_start lanren$ cargo run
+   Compiling rusty_start v0.1.0 (/Users/lanren/dev/rust/rusty_start)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.72s
+     Running `target/debug/rusty_start`
+Hello, world!
+===============================
+lanrendeMBP:rusty_start lanren$ cargo build
+   Compiling rusty_start v0.1.0 (/Users/lanren/dev/rust/rusty_start)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.41s
+
+lanrendeMBP:rusty_start lanren$ tree .
+.
+├── Cargo.lock
+├── Cargo.toml
+├── src
+│   ├── main
+│   └── main.rs
+└── target
+    |...
+    |...
+===============================
