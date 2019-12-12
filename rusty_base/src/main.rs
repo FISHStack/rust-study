@@ -1,3 +1,4 @@
+pub mod typeconv;
 
 fn main() {
     let (x,y) = (5,'6');
@@ -21,7 +22,19 @@ fn main() {
 
     // str2String("hello")
     
-    print_context_String(str2String(&s))
+    //使用tyeconv文件里面的str2String函数
+    print_context_String(typeconv::str2String(&s));
+
+    typeconv::String2Str(&*s);
+
+    let hour:i32 = 12;
+
+    //i32整形转字符串
+    print_context_String(typeconv::int2String(hour));
+
+    let  strTmp = String::from("14");
+
+    print_value(typeconv::String2int(strTmp));
 
 }
 
@@ -67,10 +80,4 @@ fn expAndPrint(sum: i32){
 
 //  typeconv.rs context
 
-fn str2String(context : &str) -> String{
-    return context.to_string();
-}
 
-fn String2Str(strContext: &str){
-    println!("convert String to &str {}",strContext);
-}
