@@ -27,9 +27,21 @@ pub fn studyHashMap(){
 
     println!("{:?}",map.get("haha"));  //None
 
+    //if this after code B, and exception err
+    for item in map.iter(){
+        println!("map.member:{},index:{}",item.0,item.1);
+    }
+
+    //for code B
     for (item,index) in map{
         //删除了company成员，剩下name和sex
         println!("map.member:{},index:{}",item,index);
         //在for遍历中，不能使用map.get()  所有权相关
-    }
+    };
+
+    //may delete member
+    // map.retain(|k, v| {
+        // *k % 2 != 0
+    // });
+    
 }
