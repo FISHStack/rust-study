@@ -1,4 +1,6 @@
 pub mod typeconv;
+pub mod collection;
+pub mod map;
 
 fn main() {
     let (x,y) = (5,'6');
@@ -35,6 +37,13 @@ fn main() {
     let  strTmp = String::from("14");
 
     print_value(typeconv::String2int(strTmp));
+
+
+    collection::studyArr();
+
+    collection::studyVector();
+
+    map::studyHashMap();
 
 }
 
