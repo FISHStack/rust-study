@@ -1,3 +1,4 @@
+
 fn main() {
     let (x,y) = (5,'6');
     println!("Hello, world! x:{},y:{}",x,y);
@@ -11,11 +12,32 @@ fn main() {
 
     let (x1,y1) = divmod(pv,pv);
     print_values(x1,y1);
+
+    expAndPrint(10);
+
+    let mut s = String::from("hello world");
+
+    print_context(&s);
+
+    // str2String("hello")
+    
+    print_context_String(str2String(&s))
+
 }
 
 //打印 i32类型value
 fn print_value(value: i32) {
     println!("The value given was: {}", value);
+}
+
+//打印 str类型value
+fn print_context(context: &str) {
+    println!("str context: {}", context);
+}
+
+//打印 string类型value
+fn print_context_String(context: String) {
+    println!("string context: {}", context);
 }
 
 //打印多个 i32类型value
@@ -33,4 +55,22 @@ fn increase_by_one(value: i32) {
 //分别对两个传感进行整除以及除余， 并返回两个结果值
 fn divmod(x: i32, y: i32) -> (i32, i32) {
     return (x / y, x % y);
+}
+
+fn expAndPrint(sum: i32){
+    if sum > 5{
+        print_context("sum > 5")
+    }else{
+        print_context("sum <=5")
+    }
+}
+
+//  typeconv.rs context
+
+fn str2String(context : &str) -> String{
+    return context.to_string();
+}
+
+fn String2Str(strContext: &str){
+    println!("convert String to &str {}",strContext);
 }
