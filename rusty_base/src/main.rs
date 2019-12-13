@@ -45,6 +45,8 @@ fn main() {
 
     map::studyHashMap();
 
+    collection::studyVecDeque();
+
 }
 
 //打印 i32类型value

@@ -1,4 +1,5 @@
 
+use std::collections::VecDeque;
 
 //打印 普通数组 
 pub fn studyArr(){
@@ -80,3 +81,29 @@ pub fn studyVector(){
 
 
 //TODO 不可重复数组 类似Set 双链表
+//VecDeque  双端队列
+pub fn studyVecDeque(){
+    // let vector: VecDeque<u32> = VecDeque::new();
+    let mut vector  = VecDeque::new();
+    //从队列头插入数据
+    //官方api url https://doc.rust-lang.org/std/collections/struct.VecDeque.html#method.push_front
+    vector.push_front(1);
+    vector.push_front(5);
+    vector.push_front(2);
+    vector.push_front(12);
+
+    //从队列头开始 对应位置插入数据，这里是55插入在第二个位置
+    vector.insert(1,55);
+
+    //从队列尾插入数据
+    vector.push_back(13);
+
+    println!("remove_front before {:?}",vector);
+
+    //从队列头第二个开始 删除  对应的从队列尾开始删除 `swap_remove_back`
+    vector.swap_remove_front(1);
+
+    // vector.remove(1);
+
+    println!("remove_front after {:?}",vector);
+}
