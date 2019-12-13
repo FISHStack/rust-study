@@ -106,4 +106,83 @@ pub fn studyVecDeque(){
     // vector.remove(1);
 
     println!("remove_front after {:?}",vector);
+
+    
+    let mut vector2: VecDeque<u32> = VecDeque::with_capacity(10);
+    println!("vector2.capacity() {}",vector2.capacity());
+    for i in 1..20{
+        vector2.push_front(i);
+    }
+    //
+    println!("vector2.after insert data.capacity() {}",vector2.capacity());
+    //
+    vector2.reserve_exact(10);
+    //
+    vector2.reserve(10);
+
+    vector2.extend(0..4);
+
+    vector2.get_mut(1);
+
+    vector2.swap(0, 2);
+
+    vector2.shrink_to_fit();
+
+    // vector2.shrink_to(6);
+
+    vector2.truncate(1);
+
+    // let c: Vec<&i32> = vector2.iter().collect();
+
+    for num in vector2.iter_mut() {
+        *num = *num - 2;
+    }
+    
+    vector2.as_slices();
+
+    vector2.as_mut_slices().0[0] = 42;
+
+    println!("vec.len:{}",vector2.len());
+    println!("vec.isEmpty:{}",vector2.is_empty());
+
+    //drain fn
+
+    vector2.clear();
+
+    println!("vec.contains:{}",vector2.contains(&1));
+
+    vector2.front();
+
+    match vector2.front_mut() {
+        Some(x) => *x = 9,
+        None => (),
+    }
+
+    vector2.back();
+
+    match vector2.back_mut() {
+        Some(x) => *x = 9,
+        None => (),
+    }
+
+    vector2.pop_front();
+    vector2.pop_back();
+    //push_front
+    //push_back
+    //swap_remove_front(0)
+    // swap_remove_back(0)
+    //insert(0,1)
+    //remove
+    //split_off(1)
+    //append
+    //retain
+    //resize_with
+    //rotate_left
+    //rotate_right
+    //resize
+}
+
+//https://doc.rust-lang.org/std/collections/struct.LinkedList.html
+fn studyLinkedList(){
+    
 }
