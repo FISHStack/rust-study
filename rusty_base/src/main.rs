@@ -49,6 +49,8 @@ fn main() {
 
     collection::studyLinkedList();
 
+    map::sutdyBTreeMap();
+
 }
 
 //打印 i32类型value
