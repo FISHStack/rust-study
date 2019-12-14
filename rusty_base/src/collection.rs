@@ -1,6 +1,8 @@
 
 use std::collections::VecDeque;
 
+use std::collections::LinkedList;
+
 //打印 普通数组 
 pub fn studyArr(){
     //直接定义数组
@@ -183,6 +185,22 @@ pub fn studyVecDeque(){
 }
 
 //https://doc.rust-lang.org/std/collections/struct.LinkedList.html
-fn studyLinkedList(){
-    
+pub fn studyLinkedList(){
+    //append
+    //iter
+    //push_front
+    //push_back
+
+    let mut list1: LinkedList<u32> = LinkedList::new();
+    let mut list2: LinkedList<u32> = LinkedList::new();
+    list1.push_front(1);
+    list1.push_front(3);
+    list1.push_front(11);
+
+    list2.append(&mut list1);
+    println!("list2:{:?}",list2);
+
+    let mut iter = list1.iter();
+    println!("{}",iter.next().is_none());
+    println!("{:?}",list1.is_empty());
 }

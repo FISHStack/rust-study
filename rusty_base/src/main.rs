@@ -47,6 +47,8 @@ fn main() {
 
     collection::studyVecDeque();
 
+    collection::studyLinkedList();
+
 }
 
 //打印 i32类型value
