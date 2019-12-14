@@ -1,6 +1,7 @@
 pub mod typeconv;
 pub mod collection;
 pub mod map;
+pub mod set;
 
 fn main() {
     let (x,y) = (5,'6');
@@ -50,6 +51,8 @@ fn main() {
     collection::studyLinkedList();
 
     map::sutdyBTreeMap();
+
+    set::studyHashSet();
 
 }
 
