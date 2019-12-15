@@ -1,7 +1,9 @@
 
 use std::collections::HashSet;
 
-#[derive(Hash, Eq, Debug)]
+use std::hash::{Hash, Hasher};
+
+#[derive(Eq, Debug)]
 struct Viking {
     name: String,
     power: usize,
@@ -10,6 +12,13 @@ struct Viking {
 impl PartialEq for Viking {
     fn eq(&self, other: &Self) -> bool {
         self.name == other.name
+    }
+}
+
+//hash object
+impl Hash for Viking{
+    fn hash<H: Hasher>(&self, state: &mut H) {
+        self.name.hash(state);
     }
 }
 
