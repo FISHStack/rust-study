@@ -1,21 +1,21 @@
-pub mod typeconv;
 pub mod collection;
 pub mod map;
 pub mod set;
+pub mod typeconv;
 
 fn main() {
-    let (x,y) = (5,'6');
-    println!("Hello, world! x:{},y:{}",x,y);
-    let mut pv :i32 = 66 ;
-    pv = pv +1;
+    let (x, y) = (5, '6');
+    println!("Hello, world! x:{},y:{}", x, y);
+    let mut pv: i32 = 66;
+    pv = pv + 1;
     print_value(pv);
     increase_by_one(pv);
     // print_value(pv);
-    let pv2:i32 = pv+1;
+    let pv2: i32 = pv + 1;
     print_value(pv2);
 
-    let (x1,y1) = divmod(pv,pv);
-    print_values(x1,y1);
+    let (x1, y1) = divmod(pv, pv);
+    print_values(x1, y1);
 
     expAndPrint(10);
 
@@ -24,21 +24,20 @@ fn main() {
     print_context(&s);
 
     // str2String("hello")
-    
+
     //使用tyeconv文件里面的str2String函数
     print_context_String(typeconv::str2String(&s));
 
     typeconv::String2Str(&*s);
 
-    let hour:i32 = 12;
+    let hour: i32 = 12;
 
     //i32整形转字符串
     print_context_String(typeconv::int2String(hour));
 
-    let  strTmp = String::from("14");
+    let strTmp = String::from("14");
 
     print_value(typeconv::String2int(strTmp));
-
 
     collection::studyArr();
 
@@ -53,7 +52,6 @@ fn main() {
     map::sutdyBTreeMap();
 
     set::studyHashSet();
-
 }
 
 //打印 i32类型value
@@ -88,14 +86,12 @@ fn divmod(x: i32, y: i32) -> (i32, i32) {
     return (x / y, x % y);
 }
 
-fn expAndPrint(sum: i32){
-    if sum > 5{
+fn expAndPrint(sum: i32) {
+    if sum > 5 {
         print_context("sum > 5")
-    }else{
+    } else {
         print_context("sum <=5")
     }
 }
 
 //  typeconv.rs context
-
-
